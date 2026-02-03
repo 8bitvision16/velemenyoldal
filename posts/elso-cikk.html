@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Közéleti vélemény megosztó</title>
+  <link rel="stylesheet" href="../style.css">
   <style>
     body {
       background-color: #0f2a2e;
@@ -11,9 +12,8 @@
       line-height: 1.6;
       padding: 30px;
     }
-    h1 {
-      color: #D4AF37; /* arany */
-    }
+    h1 { color: #D4AF37; }
+    h2 { color: #D4AF37; }
     .preview { display: inline; }
     .more-text { display: none; }
     .read-more-btn {
@@ -26,24 +26,36 @@
       margin-top: 10px;
       display: inline-block;
     }
-    .read-more-btn:hover {
-      background-color: #c49e2f;
-    }
+    .read-more-btn:hover { background-color: #c49e2f; }
   </style>
 </head>
 <body>
 
-<h1>Üdvözlet!</h1>
+<main>
+  <h1>Első cikk címe</h1>
 
-<p class="preview">
-"Ezen az oldalon különféle közélethez kapcsolódó, jellemzően kritikákat megfogalmazó, amatőr cikkeket fogunk közzétenni, vegyes rendszerességgel. Elképzelhető minden párt kritikája, annak politikai skálán elfoglalt helyétől függetlenül. Szívesen látjuk magukat, nagyon örülünk, hogy itt van! <span class="more-text">Projektünk megtekintése Öntől számunkra igencsak sokat jelent.</span>
-</p>
+  <h2>Üdvözlet!</h2>
+  <p class="lead">Ez egy vélemény. Nem objektív, nem végleges.</p>
 
-<button class="read-more-btn" onclick="toggleText(this)">Olvasd tovább →</button>
+  <p class="preview">
+    "Ezen az oldalon különféle közélethez kapcsolódó, jellemzően kritikákat megfogalmazó, amatőr cikkeket fogunk közzétenni, vegyes rendszerességgel. Elképzelhető minden párt kritikája, annak politikai skálán elfoglalt helyétől függetlenül. Szívesen látjuk magukat, nagyon örülünk, hogy itt van! 
+    <span class="more-text">Projektünk megtekintése Öntől számunkra igencsak sokat jelent.</span>
+  </p>
+
+  <p>
+    Itt jön a szöveg. Hosszú lehet. Nyugodtan lehet árnyalt.
+  </p>
+
+  <button class="read-more-btn" onclick="toggleText(this)">Olvasd tovább →</button>
+
+  <p>
+    <a href="../index.html">← vissza</a>
+  </p>
+</main>
 
 <script>
 function toggleText(btn) {
-  const moreText = btn.previousElementSibling.querySelector(".more-text");
+  const moreText = btn.parentElement.querySelector(".more-text");
   if (moreText.style.display === "inline") {
     moreText.style.display = "none";
     btn.textContent = "Olvasd tovább →";
@@ -56,3 +68,4 @@ function toggleText(btn) {
 
 </body>
 </html>
+
